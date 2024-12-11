@@ -1,4 +1,5 @@
-# 06.12.2024, 09.12.2024
+# started: 06.12.2024
+# finished: 09.12.2024
 
 # https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-time-calculator-project/build-a-time-calculator-project
 # Build a Time Calculator Project (Scientific Computing with Python 2/5)

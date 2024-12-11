@@ -1,4 +1,5 @@
-# 09.12.2024
+# started: 09.12.2024
+# finished: 11.12.202
 
 # https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project
 # Build a Budget App Project (Scientific Computing with Python 3/5)
