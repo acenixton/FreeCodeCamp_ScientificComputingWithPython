@@ -1,4 +1,6 @@
-# 05.12.2024
+# started: 05.12.2024
+# finished: 05.12.2024
+
 
 # https://www.freecodecamp.org/learn/scientific-computing-with-python/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project
 # Build an Arithmetic Formatter Project (Scientific Computing with Python 1/5)
