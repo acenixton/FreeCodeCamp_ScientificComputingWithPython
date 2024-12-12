@@ -44,16 +44,33 @@ import copy
 import random
 
 class Hat:
-    def __init__(self, *, yellow=None, blue=None, green=None, red=None, orange=None, black=None, pink=None, striped=None):
-        # gets all given argument variables in dictionary
-        balls = {**locals()}
-        # removes the Hat itself so only the balls remain
-        balls.pop('self')
-        if any(balls):
-            pass 
+    # uses kwargs wrapper because the colors and amount of colors can be chosen by the caller
+    def __init__(self, **kwargs):
+        self.contents = []
+        for color in kwargs.keys():
+            # adds given amount of every color ball
+            self.contents.extend([color for _ in range(kwargs[color])])
         
+    def draw(self, tries):
+        if tries < len(self.contents):
+            balls = [self.contents.pop(random.randint(0,len(self.contents)-1)) for _ in range(tries)]
+        else:
+            balls = copy.copy(self.contents)
+            self.contents.clear()
+        print(f"pool: {self.contents}\ndrawn: {balls}")
+        return balls
 
 def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
-    pass
+    met_results = 0
+    for _ in range(num_experiments):
+        hatcopy = copy.deepcopy(hat)
+        current_draw = hatcopy.draw(num_balls_drawn)
+        exp_results = [current_draw.count(color) >= expected_balls[color] for color in expected_balls.keys()]
+        if all(exp_results):
+            met_results += 1
+    return met_results / num_experiments
+        
 
-sombrero = Hat()
+sombrero = Hat(yellow=5, red=7, blue=8)
+# print(sombrero.draw(5))
+print(experiment(sombrero, {'blue':1, 'red':2}, 3, 8))
